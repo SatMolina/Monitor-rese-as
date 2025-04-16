@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitor de Reseñas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+    <link rel="icon" href="{{ url_for('static', filename='icons/icon-192x192.png') }}">
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo Autoescuela Molina" class="logo">
+        <h1>Monitor de Reseñas</h1>
+    </header>
+
+    <main>
+        <section class="ratings">
+            <h2>Puntuaciones por sucursal</h2>
+            <ul>
+                {% for location in ratings %}
+                    <li>
+                        <strong>{{ location.name }}:</strong>
+                        <span class="stars">⭐ {{ location.rating }}</span>
+                    </li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <section class="reviews">
+            <h2>Reseñas negativas recientes</h2>
+            {% if negative_reviews %}
+                <ul>
+                    {% for review in negative_reviews %}
+                        <li class="review">
+                            <p class="review-location"><strong>{{ review.location }}</strong></p>
+                            <p class="review-rating">⭐ {{ review.rating }}</p>
+                            <p class="review-text">"{{ review.text }}"</p>
+                            <p class="review-date">{{ review.relative_time }}</p>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No hay reseñas negativas recientes 🎉</p>
+            {% endif %}
+        </section>
+    </main>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register("/static/service-worker.js")
+      .then(reg => console.log("Service Worker registrado:", reg.scope))
+      .catch(err => console.error("Error al registrar Service Worker:", err));
+  }
+</script>
+</body>
+</html>

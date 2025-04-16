@@ -1,0 +1,22 @@
+{
+  "name": "Autoescuela Molina",
+  "short_name": "Molina",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFD700",
+  "theme_color": "#FFD700",
+  "orientation": "portrait",
+  "description": "Monitor en tiempo real de puntuaciones y reseñas negativas de Autoescuela Molina",
+  "icons": [
+    {
+      "src": "/static/icons/icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/static/icons/icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

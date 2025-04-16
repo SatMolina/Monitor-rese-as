@@ -1,0 +1,84 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff8e1;
+    color: #333;
+}
+
+header {
+    background-color: #ffd600;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    max-height: 80px;
+    margin-bottom: 0.5rem;
+}
+
+h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #222;
+}
+
+main {
+    padding: 1rem;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: #444;
+    border-left: 4px solid #ffd600;
+    padding-left: 0.5rem;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 1rem;
+    background-color: #fffde7;
+    border: 1px solid #ffee58;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.stars {
+    font-size: 1.2rem;
+    color: #fbc02d;
+}
+
+.review-text {
+    font-style: italic;
+    margin: 0.5rem 0;
+}
+
+.review-location,
+.review-rating,
+.review-date {
+    font-size: 0.9rem;
+    margin: 0.2rem 0;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+}

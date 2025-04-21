@@ -27,25 +27,6 @@
             </ul>
         </section>
 
-        <section class="reviews">
-            <h2>Reseñas recientes</h2>
-            {% if reviews %}
-                <ul>
-                    {% for review in reviews %}
-                        <li class="review">
-                            <p class="review-location"><strong>{{ review.location }}</strong></p>
-                            <p class="review-rating">⭐ {{ review.rating }}</p>
-                            <p class="review-reviewer"><strong>{{ review.reviewer }}</strong></p>
-                            <p class="review-text">"{{ review.comment }}"</p>
-                            <p class="review-date">{{ review.date }}</p>
-                        </li>
-                    {% endfor %}
-                </ul>
-            {% else %}
-                <p>No hay reseñas disponibles.</p>
-            {% endif %}
-        </section>
-
         <section class="negative-reviews">
             <h2>Reseñas negativas recientes</h2>
             {% if negative_reviews %}

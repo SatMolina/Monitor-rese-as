@@ -33,15 +33,15 @@ def home():
         }
     ]
 
-    # Filtrar reseñas negativas (por ejemplo, ONE y TWO)
-    negative_reviews = [review for review in simulated_reviews if review['rating'] in ['1', '2']]  # Cambié las calificaciones a 1 y 2 en lugar de 'ONE' y 'TWO'
+    # Filtrar reseñas negativas (1 o 2 estrellas)
+    negative_reviews = [review for review in simulated_reviews if float(review['rating']) <= 2]
 
     # Calcular las puntuaciones por sucursal
     ratings = []
     for location in set(review['location'] for review in simulated_reviews):
         location_reviews = [review for review in simulated_reviews if review['location'] == location]
         avg_rating = sum(float(review['rating']) for review in location_reviews) / len(location_reviews)
-        ratings.append({'name': location, 'rating': round(avg_rating, 1)})  # Asegurarse de redondear a un decimal
+        ratings.append({'name': location, 'rating': round(avg_rating, 1)})
 
     # Ordenar reseñas de más reciente a más antigua
     sorted_reviews = sorted(simulated_reviews, key=lambda x: x['datetime'], reverse=True)

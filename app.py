@@ -33,7 +33,7 @@ def home():
         }
     ]
 
-    # Filtrar reseñas negativas (1 o 2 estrellas)
+    # Filtrar solo reseñas negativas (de 1 o 2 estrellas)
     negative_reviews = [review for review in simulated_reviews if float(review['rating']) <= 2]
 
     # Calcular las puntuaciones por sucursal

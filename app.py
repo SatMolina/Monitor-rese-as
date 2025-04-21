@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    # Simulación de reseñas con fechas
+    # Simulación de reseñas con fechas (todas negativas)
     simulated_reviews = [
         {
             'location': 'Sucursal Molina Ronda',
@@ -25,16 +25,13 @@ def home():
         },
         {
             'location': 'Sucursal Molina Bola',
-            'rating': '3.8',
+            'rating': '1.8',
             'comment': 'Mala experiencia, No lo recomiendo.',
             'reviewer': 'Carlos Ruiz',
             'date': '13/04/2025 09:15',
             'datetime': datetime.strptime("2025-04-13T09:15:00", "%Y-%m-%dT%H:%M:%S")
         }
     ]
-
-    # Filtrar solo reseñas negativas (de 1 o 2 estrellas)
-    negative_reviews = [review for review in simulated_reviews if float(review['rating']) <= 2]
 
     # Calcular las puntuaciones por sucursal
     ratings = []
@@ -46,7 +43,7 @@ def home():
     # Ordenar reseñas de más reciente a más antigua
     sorted_reviews = sorted(simulated_reviews, key=lambda x: x['datetime'], reverse=True)
 
-    return render_template("index.html", reviews=sorted_reviews, ratings=ratings, negative_reviews=negative_reviews)
+    return render_template("index.html", reviews=sorted_reviews, ratings=ratings)
 
 if __name__ == "__main__":
     app.run(debug=True)

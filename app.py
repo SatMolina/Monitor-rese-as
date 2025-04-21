@@ -5,11 +5,11 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    # Simulación de reseñas negativas con fechas
+    # Simulación de reseñas con fechas
     simulated_reviews = [
         {
             'location': 'Sucursal Molina Ronda',
-            'rating': 3.7,  # Cambiar a un número decimal
+            'rating': '3.7',
             'comment': 'No me gustó el trato.',
             'reviewer': 'Juan Pérez',
             'date': '15/04/2025 10:45',
@@ -17,7 +17,7 @@ def home():
         },
         {
             'location': 'Sucursal Rally Motril',
-            'rating': 4.1,  # Cambiar a un número decimal
+            'rating': '4.1',
             'comment': 'Demasiada espera para clases prácticas.',
             'reviewer': 'Ana García',
             'date': '14/04/2025 16:20',
@@ -25,7 +25,7 @@ def home():
         },
         {
             'location': 'Sucursal Molina Bola',
-            'rating': 3.8,  # Cambiar a un número decimal
+            'rating': '3.8',
             'comment': 'Mala experiencia, No lo recomiendo.',
             'reviewer': 'Carlos Ruiz',
             'date': '13/04/2025 09:15',
@@ -33,15 +33,15 @@ def home():
         }
     ]
 
-    # Filtrar reseñas negativas (por ejemplo, puntuaciones menores a 2)
-    negative_reviews = [review for review in simulated_reviews if review['rating'] < 2]
+    # Filtrar reseñas negativas (por ejemplo, ONE y TWO)
+    negative_reviews = [review for review in simulated_reviews if review['rating'] in ['1', '2']]  # Cambié las calificaciones a 1 y 2 en lugar de 'ONE' y 'TWO'
 
-    # Calcular las puntuaciones promedio por sucursal
+    # Calcular las puntuaciones por sucursal
     ratings = []
     for location in set(review['location'] for review in simulated_reviews):
         location_reviews = [review for review in simulated_reviews if review['location'] == location]
-        avg_rating = sum(review['rating'] for review in location_reviews) / len(location_reviews)  # Promedio de puntuaciones
-        ratings.append({'name': location, 'rating': round(avg_rating, 1)})  # Redondear a 1 decimal
+        avg_rating = sum(float(review['rating']) for review in location_reviews) / len(location_reviews)
+        ratings.append({'name': location, 'rating': round(avg_rating, 1)})  # Asegurarse de redondear a un decimal
 
     # Ordenar reseñas de más reciente a más antigua
     sorted_reviews = sorted(simulated_reviews, key=lambda x: x['datetime'], reverse=True)

@@ -9,7 +9,7 @@ def home():
     simulated_reviews = [
         {
             'location': 'Sucursal Molina Ronda',
-            'rating': 'ONE',
+            'rating': '3.7',
             'comment': 'No me gustó el trato.',
             'reviewer': 'Juan Pérez',
             'date': '15/04/2025 10:45',
@@ -17,16 +17,16 @@ def home():
         },
         {
             'location': 'Sucursal Rally Motril',
-            'rating': 'TWO',
+            'rating': '4.1',
             'comment': 'Demasiada espera para clases prácticas.',
             'reviewer': 'Ana García',
             'date': '14/04/2025 16:20',
             'datetime': datetime.strptime("2025-04-14T16:20:00", "%Y-%m-%dT%H:%M:%S")
         },
         {
-            'location': 'Sucursal Molina Illora',
-            'rating': 'ONE',
-            'comment': 'No me resolvieron las dudas.',
+            'location': 'Sucursal Molina Bola',
+            'rating': '3.8',
+            'comment': 'Mala experiencia, No lo recomiendo.',
             'reviewer': 'Carlos Ruiz',
             'date': '13/04/2025 09:15',
             'datetime': datetime.strptime("2025-04-13T09:15:00", "%Y-%m-%dT%H:%M:%S")

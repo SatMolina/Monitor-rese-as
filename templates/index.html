@@ -34,7 +34,7 @@
             {% for review in negative_reviews %}
                 <li class="review">
                     <p class="review-location"><strong>{{ review.location }}</strong></p> <!-- Ubicación de la sucursal -->
-                    <p class="review-rating">⭐ {{ review.rating }}</p> <!-- Puntuación -->
+                    <p class="review-rating">⭐ {{ review.rating | round(1) }}</p>  <!-- Puntuación con un decimal -->
                     <p class="review-author"><strong>{{ review.reviewer }}</strong> dijo:</p> <!-- Nombre del revisor -->
                     <p class="review-text">"{{ review.comment }}"</p> <!-- Comentario -->
                     <p class="review-date">{{ review.date }}</p> <!-- Fecha de la reseña -->

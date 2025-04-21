@@ -9,7 +9,7 @@ def home():
     simulated_reviews = [
         {
             'location': 'Sucursal Molina Ronda',
-            'rating': '3.7',
+            'rating': 3.7,  # Cambiar a un número decimal
             'comment': 'No me gustó el trato.',
             'reviewer': 'Juan Pérez',
             'date': '15/04/2025 10:45',
@@ -17,7 +17,7 @@ def home():
         },
         {
             'location': 'Sucursal Rally Motril',
-            'rating': '4.1',
+            'rating': 4.1,  # Cambiar a un número decimal
             'comment': 'Demasiada espera para clases prácticas.',
             'reviewer': 'Ana García',
             'date': '14/04/2025 16:20',
@@ -25,7 +25,7 @@ def home():
         },
         {
             'location': 'Sucursal Molina Bola',
-            'rating': '3.8',
+            'rating': 3.8,  # Cambiar a un número decimal
             'comment': 'Mala experiencia, No lo recomiendo.',
             'reviewer': 'Carlos Ruiz',
             'date': '13/04/2025 09:15',
@@ -33,15 +33,15 @@ def home():
         }
     ]
 
-    # Filtrar reseñas negativas (por ejemplo, ONE y TWO)
-    negative_reviews = [review for review in simulated_reviews if review['rating'] in ['ONE', 'TWO']]
+    # Filtrar reseñas negativas (por ejemplo, puntuaciones menores a 2)
+    negative_reviews = [review for review in simulated_reviews if review['rating'] < 2]
 
-    # Calcular las puntuaciones por sucursal
+    # Calcular las puntuaciones promedio por sucursal
     ratings = []
     for location in set(review['location'] for review in simulated_reviews):
         location_reviews = [review for review in simulated_reviews if review['location'] == location]
-        avg_rating = sum(1 if review['rating'] == 'ONE' else 2 if review['rating'] == 'TWO' else 3 for review in location_reviews) / len(location_reviews)
-        ratings.append({'name': location, 'rating': avg_rating})
+        avg_rating = sum(review['rating'] for review in location_reviews) / len(location_reviews)  # Promedio de puntuaciones
+        ratings.append({'name': location, 'rating': round(avg_rating, 1)})  # Redondear a 1 decimal
 
     # Ordenar reseñas de más reciente a más antigua
     sorted_reviews = sorted(simulated_reviews, key=lambda x: x['datetime'], reverse=True)

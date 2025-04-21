@@ -36,6 +36,7 @@
                             <p class="review-location"><strong>{{ review.location }}</strong></p>
                             <p class="review-rating">⭐ {{ review.rating }}</p>
                             <p class="review-text">"{{ review.comment }}"</p>
+							<p class="review-author"><strong>{{ review.reviewer }}</strong> dijo:</p> <!-- Agregado nombre del revisor -->
                             <p class="review-date">{{ review.relative_time }}</p>
                         </li>
                     {% endfor %}

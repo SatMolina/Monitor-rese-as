@@ -10,12 +10,7 @@ def home():
         {
             'location': 'Sucursal Molina Ronda',
             'rating': '3.7',
-            'comment': 'Publicidad engañosa clases anunciadas a un precio 
-            cuando luego es al parecer para 45 min y las clases son obligadamente de 1h.
-            Trato nefasto, subidas de precio continuas (cuando baja la gasolina, se les debe de olvidar bajarlas)
-            y listas de espera trimestrales para un examen. Un cuadro, una prueba más de que mucho aprieta poco abarca,
-            de que el dinero es lo que primero entra y la atención al cliente lo último que llega. 
-            Hacía tiempo que no veía un establecimiento tan falto de escrúpulos.',
+            'comment': 'Publicidad engañosa clases anunciadas a un precio cuando luego es al parecer para 45 min y las clases son obligadamente de 1h. Trato nefasto, subidas de precio continuas (cuando baja la gasolina, se les debe de olvidar bajarlas) y listas de espera trimestrales para un examen. Un cuadro, una prueba más de que mucho aprieta poco abarca, de que el dinero es lo que primero entra y la atención al cliente lo último que llega. Hacía tiempo que no veía un establecimiento tan falto de escrúpulos.',
             'reviewer': 'Victor Mariscal Guerra',
             'date': '15/04/2025 10:45',
             'datetime': datetime.strptime("2025-04-15T10:45:00", "%Y-%m-%dT%H:%M:%S")

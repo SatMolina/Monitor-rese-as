@@ -10,7 +10,7 @@ def home():
         {
             'location': 'Sucursal Molina Ronda',
             'rating': '3.7',
-            'comment': 'Publicidad engañosa: clases anunciadas a un precio 
+            'comment': 'Publicidad engañosa clases anunciadas a un precio 
             cuando luego es al parecer para 45 min y las clases son obligadamente de 1h.
             Trato nefasto, subidas de precio continuas (cuando baja la gasolina, se les debe de olvidar bajarlas)
             y listas de espera trimestrales para un examen. Un cuadro, una prueba más de que mucho aprieta poco abarca,

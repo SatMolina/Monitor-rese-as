@@ -25,7 +25,7 @@ def home():
         },
         {
             'location': 'Sucursal Molina Bola',
-            'rating': '1.8',
+            'rating': '3.8',
             'comment': 'Mala experiencia, No lo recomiendo.',
             'reviewer': 'Carlos Ruiz',
             'date': '13/04/2025 09:15',

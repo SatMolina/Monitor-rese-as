@@ -18,7 +18,7 @@ def home():
         {
             'location': 'Sucursal Rally Motril',
             'rating': '4.1',
-            'comment': 'Mi experiencia, a grandes rasgos, no fue satisfactoria.
+            'comment': '''Mi experiencia, a grandes rasgos, no fue satisfactoria.
             Especialmente debido a la secretaria, Mamen, que sin duda es lo peor de la autoescuela. 
             Su manera de comportarse de cara al público es brusca, seca y borde,
             lo que hace la comunicación con ella muy incómoda y difícil:
@@ -27,7 +27,7 @@ def home():
             Me alegro de no tener que volver a lidiar con ella.
             En cuanto a los profesores, hay de todo. Algunos son más callados,
             otros son más conversadores, pero en general son pacientes y te aconsejan bien
-            a la hora de conducir. Por eso, le doy dos estrellas y no una.',
+            a la hora de conducir. Por eso, le doy dos estrellas y no una.''',
             'reviewer': 'Azariego',
             'date': '26/03/2024 16:20',
             'datetime': datetime.strptime("2024-03-26T16:20:00", "%Y-%m-%dT%H:%M:%S")

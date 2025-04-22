@@ -10,24 +10,38 @@ def home():
         {
             'location': 'Sucursal Molina Ronda',
             'rating': '3.7',
-            'comment': 'No me gustó el trato.',
-            'reviewer': 'Juan Pérez',
+            'comment': 'Publicidad engañosa: clases anunciadas a un precio 
+            cuando luego es al parecer para 45 min y las clases son obligadamente de 1h.
+            Trato nefasto, subidas de precio continuas (cuando baja la gasolina, se les debe de olvidar bajarlas)
+            y listas de espera trimestrales para un examen. Un cuadro, una prueba más de que mucho aprieta poco abarca,
+            de que el dinero es lo que primero entra y la atención al cliente lo último que llega. 
+            Hacía tiempo que no veía un establecimiento tan falto de escrúpulos.',
+            'reviewer': 'Victor Mariscal Guerra',
             'date': '15/04/2025 10:45',
             'datetime': datetime.strptime("2025-04-15T10:45:00", "%Y-%m-%dT%H:%M:%S")
         },
         {
             'location': 'Sucursal Rally Motril',
             'rating': '4.1',
-            'comment': 'Demasiada espera para clases prácticas.',
-            'reviewer': 'Ana García',
-            'date': '14/04/2025 16:20',
-            'datetime': datetime.strptime("2025-04-14T16:20:00", "%Y-%m-%dT%H:%M:%S")
+            'comment': 'Mi experiencia, a grandes rasgos, no fue satisfactoria.
+            Especialmente debido a la secretaria, Mamen, que sin duda es lo peor de la autoescuela. 
+            Su manera de comportarse de cara al público es brusca, seca y borde,
+            lo que hace la comunicación con ella muy incómoda y difícil:
+            desde acordar días para clases prácticas, hasta apuntarte a una fecha de examen.
+            Además, se pone muy borde / rácana cuando le pides ventosas para la L.
+            Me alegro de no tener que volver a lidiar con ella.
+            En cuanto a los profesores, hay de todo. Algunos son más callados,
+            otros son más conversadores, pero en general son pacientes y te aconsejan bien
+            a la hora de conducir. Por eso, le doy dos estrellas y no una.',
+            'reviewer': 'Azariego',
+            'date': '26/03/2024 16:20',
+            'datetime': datetime.strptime("2024-03-26T16:20:00", "%Y-%m-%dT%H:%M:%S")
         },
         {
             'location': 'Sucursal Molina Bola',
             'rating': '3.8',
             'comment': 'Mala experiencia, No lo recomiendo.',
-            'reviewer': 'Carlos Ruiz',
+            'reviewer': 'Luis Jesus',
             'date': '13/04/2025 09:15',
             'datetime': datetime.strptime("2025-04-13T09:15:00", "%Y-%m-%dT%H:%M:%S")
         }

@@ -1,25 +1,45 @@
-const CACHE_NAME = "molina-cache-v1";
+// service-worker.js
+const CACHE_NAME = 'my-cache-v1';
 const urlsToCache = [
-  "/",
-  "/static/styles.css",
-  "/static/logo.png",
-  "/static/icons/icon-192x192.png",
-  "/static/icons/icon-512x512.png",
-  "/manifest.json"
+  '/',
+  '/index.html',
+  '/styles.css',
+  '/app.js', // Si tienes un archivo JS, agrégalo aquí
+  '/static/logo.png', // Otros archivos estáticos, como imágenes, puedes añadirlos aquí
 ];
 
-self.addEventListener("install", function(event) {
+// Durante la instalación, caché todos los archivos necesarios
+self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then(function(cache) {
+    caches.open(CACHE_NAME).then((cache) => {
+      console.log('Archivos en caché durante la instalación');
       return cache.addAll(urlsToCache);
     })
   );
 });
 
-self.addEventListener("fetch", function(event) {
+// Durante la activación, borra versiones anteriores de la caché
+self.addEventListener('activate', (event) => {
+  const cacheWhitelist = [CACHE_NAME];
+  event.waitUntil(
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
+        cacheNames.map((cacheName) => {
+          if (!cacheWhitelist.includes(cacheName)) {
+            console.log(`Borrando caché antiguo: ${cacheName}`);
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    })
+  );
+});
+
+// Durante la navegación, trata de servir desde la caché, si no está, haz una solicitud a la red
+self.addEventListener('fetch', (event) => {
   event.respondWith(
-    caches.match(event.request).then(function(response) {
-      return response || fetch(event.request);
+    caches.match(event.request).then((cachedResponse) => {
+      return cachedResponse || fetch(event.request);
     })
   );
 });
